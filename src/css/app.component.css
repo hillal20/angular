@@ -1,0 +1,15 @@
+.child {
+  background: green;
+  color: yellow;
+  width: 80vw;
+}
+.parent {
+  background: yellow;
+}
+.app {
+  background: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
