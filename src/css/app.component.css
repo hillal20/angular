@@ -1,11 +1,3 @@
-.child {
-  background: green;
-  color: yellow;
-  width: 80vw;
-}
-.parent {
-  background: yellow;
-}
 .app {
   background: red;
   display: flex;

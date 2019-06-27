@@ -1,4 +1,6 @@
-<div>
+<div class="kid">
   <h3>I am a kid</h3>
-  {{ obj.event }}
+  <div>{{ obj.event }}</div>
+  <div>{{ obj.location }}</div>
+  <grandChild1 [obj1]="obj"></grandChild1>
 </div>
