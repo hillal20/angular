@@ -12,7 +12,6 @@ import { Component } from "@angular/core";
   styleUrls: ["./parent.less"]
 })
 export class Parent {
-  //   @Input() obj: any
   obj = {
     event: "party",
     location: " Egypt"

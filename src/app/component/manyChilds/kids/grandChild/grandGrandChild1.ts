@@ -8,11 +8,19 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 export class GrandGrandChild1 {
   @Input() detail: any;
   @Output() sendEvent = new EventEmitter();
-
+  ggChildProperty: any = "ggChild value is here";
   handlerClick() {
     let el = document.querySelector(".ggChild1");
-    console.log("el ==> ", el);
-    console.log("eventClick ===> ", this.sendEvent);
-    this.sendEvent.emit({ bill: "fooo" });
+
+    this.sendEvent.emit({
+      id: 5,
+      location: "NYC",
+      company: "Google",
+      team: "Man city ",
+      name: this.detail.name
+    });
+  }
+  showDetail() {
+    console.log("=== showDetail ===");
   }
 }

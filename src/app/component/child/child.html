@@ -1,4 +1,45 @@
-<div class="child">
-  <h4>hello word</h4>
-  <div>{{ child.name }}</div>
+<div class="child" *ngFor="let el of childs">
+  <h4>element</h4>
+  <img
+    src="../../../assets/beach.jpg"
+    height="200"
+    width="200"
+    onclick="{alert('hello')}"
+  />
+  <div>
+    <div class="card">
+      <div>Name: {{ el?.name }}</div>
+      <div [hidden]="!el?.lastName">Last Name :{{ el?.lastName }}</div>
+      <div>Age: {{ el?.age }}</div>
+      <div [class.green]="el?.time === '8 am'" [ngSwitch]="el?.time">
+        Time: {{ el?.time }}
+        <span *ngSwitchCase="'8 am'">(early start)</span>
+        <span *ngSwitchCase="'11 am'">(late start)</span>
+        <span *ngSwitchDefault>(normal start)</span>
+      </div>
+      <div>Elements: {{ el?.elements }}</div>
+      <div *ngIf="el?.item">Item : {{ el?.item }}</div>
+      <div
+        [ngClass]="{
+          red: el?.review === 'bad',
+          bold: el?.review === 'excellent'
+        }"
+      >
+        Review: {{ el?.review }}
+      </div>
+      <div [ngClass]="applyHobbiesStyle(el)">Hobby: {{ el.hobby }}</div>
+      <div
+        [ngStyle]="{
+          color: el?.height === '6.1' ? 'white' : 'tan',
+          fontSize: el?.height === '6.1' ? '25px' : '15px',
+          background: 'black'
+        }"
+      >
+        height: {{ el.height }}
+      </div>
+      <button (click)="toastrEventHandler(el?.name)">
+        Click on To display Toastr
+      </button>
+    </div>
+  </div>
 </div>

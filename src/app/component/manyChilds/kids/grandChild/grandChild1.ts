@@ -3,14 +3,17 @@ import { Component, Input } from "@angular/core";
 @Component({
   selector: "grandChild1",
   template: `
-    <div>
+    <div class="grandChild1">
       <div>I am grand Child 1</div>
       <div>{{ obj1.event }}</div>
       <div>{{ obj1.location }}</div>
       <grandGrandChild1
         [detail]="details1"
-        (sendEvent)="sendEventHandler($data)"
+        #ggChild
+        (sendEvent)="sendEventHandler($event)"
       ></grandGrandChild1>
+      <h1>{{ ggChild.ggChildProperty }}</h1>
+      <button (click)="ggChild.showDetail()">Show Detail</button>
     </div>
   `,
   styleUrls: ["./grandChild1.less"]
@@ -25,7 +28,7 @@ export class GrandChild1 {
     nickname: "jo",
     location: "NYC"
   };
-  sendEventHandler(data: any) {
-    console.log("data is here .......");
+  sendEventHandler(data) {
+    console.log("data is here .......", data);
   }
 }
