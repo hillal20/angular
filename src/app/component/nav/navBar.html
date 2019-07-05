@@ -1,8 +1,43 @@
 <div class="navBar">
-  <h3 (click)="toasterClassHandler()">myApp</h3>
-  <div>events</div>
-  <div>element</div>
-  <div>infosys</div>
+  <div
+    [routerLink]="['/']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    routerLinkActive="router-link-active"
+  >
+    home
+  </div>
+  <div
+    (click)="toasterClassHandler()"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    myApp
+  </div>
+  <div
+    [routerLink]="['/childs']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    childs
+  </div>
+  <div
+    [routerLink]="['/childs/new']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    Create child
+  </div>
+  <div
+    [routerLink]="['/user/profile']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    profile
+  </div>
+  <div routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    infosys
+  </div>
   <div><input /> search</div>
   <h4>welcome Hilal</h4>
 </div>

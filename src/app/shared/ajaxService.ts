@@ -1,17 +1,19 @@
 import { Injectable } from "@angular/core";
+import { Subject } from "rxjs";
 
 @Injectable()
-export class GeneralService {
-  getChildrenData() {
-    return childs;
+export class AjaxGeneralService {
+  getAjaxChildrenData() {
+    let subject = new Subject(); // observable
+    setTimeout(() => {
+      subject.next(childs);
+      subject.complete();
+    }, 100);
+    return subject;
   }
-
-  getSingleChild(id: number) {
-    return childs.find((c, i) => {
-      return c.id === id;
-    });
-  }
+  getAjaxSingleChild() {}
 }
+
 const childs = [
   {
     id: 1,

@@ -1,19 +1,29 @@
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule, forwardRef } from "@angular/core";
-import { NavBar } from "./component/nav/nav";
-import { AppComponent } from "./component/app.component";
-import { ChildComponent } from "./component/child/child";
-import { Parent } from "./component/manyChilds/parent";
-import { Kid } from "./component/manyChilds/kids/kid";
-import { GrandChild1 } from "./component/manyChilds/kids/grandChild/grandChild1";
-import { GrandGrandChild1 } from "./component/manyChilds/kids/grandChild/grandGrandChild1";
-import { GeneralService } from "./shared/services";
-import { ToastrServiceClass } from "./commonElements/toastr";
-import { ToastrModule } from "ngx-toastr";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { ChildDetail } from "./component/child/chidDetail/childDetail";
-import { appRoutes } from "../routes/routes";
-import { RouterModule } from "@angular/router";
+import { NgModule } from "@angular/core";
+import { checkDirtyState } from "./helperFunctions/checkDirtyState";
+import {
+  AppComponent,
+  ChildComponent,
+  Parent,
+  NavBar,
+  Kid,
+  GrandChild1,
+  GrandGrandChild1,
+  GeneralService,
+  AjaxGeneralService,
+  AjaxChildsResolver,
+  ToastrServiceClass,
+  ToastrModule,
+  BrowserAnimationsModule,
+  ChildDetail,
+  appRoutes,
+  RouterModule,
+  CreateChild,
+  ErrorPage,
+  RoutesActivator,
+  AjaxChildComponent
+} from "./index";
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -29,9 +39,22 @@ import { RouterModule } from "@angular/router";
     Kid,
     GrandChild1,
     GrandGrandChild1,
-    ChildDetail
+    ChildDetail,
+    CreateChild,
+    ErrorPage,
+    AjaxChildComponent
   ],
-  providers: [GeneralService, ToastrServiceClass],
+  providers: [
+    GeneralService,
+    ToastrServiceClass,
+    RoutesActivator,
+    AjaxGeneralService,
+    AjaxChildsResolver,
+    {
+      provide: "canDeactivateCreateChild",
+      useValue: checkDirtyState
+    }
+  ],
 
   bootstrap: [AppComponent]
 })

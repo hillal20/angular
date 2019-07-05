@@ -1,4 +1,8 @@
-<div class="child" *ngFor="let el of childs" [routerLink]="['/childs', el.id]">
+<div
+  class="child"
+  *ngFor="let el of ajaxChilds"
+  [routerLink]="['/childs', el.id]"
+>
   <h4>element</h4>
   <img
     src="../../../assets/beach.jpg"
