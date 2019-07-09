@@ -17,6 +17,7 @@
         <span *ngSwitchCase="'11 am'">(late start)</span>
         <span *ngSwitchDefault>(normal start)</span>
       </div>
+      <div>Date: {{ el?.date }}</div>
       <div>Elements: {{ el?.elements }}</div>
       <div *ngIf="el?.item">Item : {{ el?.item }}</div>
       <div

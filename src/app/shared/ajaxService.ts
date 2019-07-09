@@ -1,51 +1,106 @@
 import { Injectable } from "@angular/core";
-import { Subject } from "rxjs";
-
+import { Subject, Observable } from "rxjs";
+import { IChild } from "./models/childsModel";
 @Injectable()
 export class AjaxGeneralService {
-  getAjaxChildrenData() {
-    let subject = new Subject(); // observable
+  getAjaxChildrenData(): Observable<IChild[]> {
+    let subject = new Subject<IChild[]>(); // observable
     setTimeout(() => {
       subject.next(childs);
       subject.complete();
     }, 100);
     return subject;
   }
-  getAjaxSingleChild() {}
+  getAjaxSingleChild(id: number): IChild {
+    return childs.find((c, i) => {
+      return c.id === id;
+    });
+  }
 }
 
-const childs = [
+const childs: IChild[] = [
   {
     id: 1,
     name: "hilal",
-    lastName: " aissani",
-    age: "34",
+    date: new Date("9/26/2090"),
+    lastName: "aissani",
+    age: 34,
     item: "book",
-    time: "10 am",
+    time: "9 am",
     review: "excellent",
-    hobby: "soccer",
-    height: "6.0"
-  },
-  {
-    id: 2,
-    name: "amine ",
-    time: "11 am",
-    age: "30",
     elements: [1, 23, 15, 17],
-    review: "average",
-    hobby: "basket ball",
-    height: "5.9"
+    hobby: "soccer",
+    height: "6.0",
+    location: {
+      address: "2345 east 100 st",
+      city: "NYC",
+      country: "USA"
+    },
+    sessions: [
+      {
+        id: 1,
+        name: "session1"
+      },
+      {
+        id: 2,
+        name: "session2"
+      }
+    ]
   },
   {
     id: 3,
-    name: "bbabababa ",
-    lastName: "babababa",
-    age: "20",
+    date: new Date(),
+    name: "xxxxxxxx ",
+    lastName: "xxxxxx",
+    age: 20,
     time: "8 am",
     elements: [1, 23, 15, 17],
     item: "car",
     review: "bad",
     hobby: "hand ball",
-    height: "6.1"
+    height: "6.1",
+    location: {
+      address: "2345 east 100 st",
+      city: "NYC",
+      country: "USA"
+    },
+    sessions: [
+      {
+        id: 1,
+        name: "session1"
+      },
+      {
+        id: 2,
+        name: "session2"
+      }
+    ]
+  },
+  {
+    id: 2,
+    date: new Date(),
+    name: "bbabababa ",
+    lastName: "",
+    age: 20,
+    time: "8 am",
+    elements: [1, 23, 15, 17],
+    item: "car",
+    review: "bad",
+    hobby: "hand ball",
+    height: "6.1",
+    location: {
+      address: "2345 east 100 st",
+      city: "NYC",
+      country: "USA"
+    },
+    sessions: [
+      {
+        id: 1,
+        name: "session1"
+      },
+      {
+        id: 2,
+        name: "session2"
+      }
+    ]
   }
 ];

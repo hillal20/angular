@@ -21,7 +21,8 @@ import {
   CreateChild,
   ErrorPage,
   RoutesActivator,
-  AjaxChildComponent
+  AjaxChildComponent,
+  AuthService
 } from "./index";
 
 @NgModule({
@@ -50,6 +51,7 @@ import {
     RoutesActivator,
     AjaxGeneralService,
     AjaxChildsResolver,
+    AuthService,
     {
       provide: "canDeactivateCreateChild",
       useValue: checkDirtyState

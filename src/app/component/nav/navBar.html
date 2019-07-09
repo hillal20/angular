@@ -39,5 +39,13 @@
     infosys
   </div>
   <div><input /> search</div>
-  <h4>welcome Hilal</h4>
+  <h4 *ngIf="authService.userAuthenticated()">
+    welcome {{ authService.user.firstName }}
+  </h4>
+  <a
+    [routerLink]="['/user/login']"
+    routerLinkActive="router-link-active"
+    *ngIf="!authService.userAuthenticated()"
+    >Login</a
+  >
 </div>

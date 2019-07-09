@@ -1,6 +1,6 @@
 import { CreateChild } from "../component/createChild/createChild";
 
-const checkDirtyState = (component: CreateChild) => {
+export const checkDirtyState = (component: CreateChild) => {
   console.log("component ==> ", component);
   if (component.isDirty) {
     return window.confirm(
@@ -10,5 +10,3 @@ const checkDirtyState = (component: CreateChild) => {
     return true;
   }
 };
-
-module.exports = { checkDirtyState };

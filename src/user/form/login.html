@@ -1,0 +1,36 @@
+<div>
+  <h3>Login Form</h3>
+  <form #loginForm="ngForm" autocomplete="off" novalidate>
+    User Name :
+    <em *ngIf="aboutToClick && loginForm.value.userName === null">required</em>
+    <input
+      (ngModel)="(userName)"
+      name="userName"
+      placeholder="user name "
+      required
+    />
+
+    Password :
+    <em *ngIf="aboutToClick && loginForm.value.password === null">required</em>
+    <input
+      #ngModel="ngModel"
+      (ngModel)="(password)"
+      name="password"
+      placeholder="password..."
+      required
+    />
+    <span (mouseenter)="aboutToClick = true">
+      <button
+        (click)="login(loginForm.value, aboutToClick)"
+        [disabled]="loginForm.invalid"
+      >
+        submit
+      </button>
+    </span>
+    <button>
+      Cancel
+    </button>
+  </form>
+  <!-- this button just to help me to console.log(ngForm && ngModel) -->
+  <button (click)="consoleLoginForm(loginForm, ngModel)">login Form</button>
+</div>

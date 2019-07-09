@@ -19,3 +19,5 @@ export * from "./component/createChild/createChild";
 export * from "./component/error/error";
 export * from "./routesActivator/routesActivator";
 export * from "./component/ajaxChild/ajaxChild";
+export * from "./shared/models/childsModel";
+export * from "../user/authService/authService";
