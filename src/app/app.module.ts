@@ -1,6 +1,13 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { checkDirtyState } from "./helperFunctions/checkDirtyState";
+import { StoreModule } from "@ngrx/store";
+import { reducer } from "./reducers/reducers";
+import { HttpClientModule } from "@angular/common/http";
+import { AjaxService } from "../app/ajax/ajaxService";
+import { ObservablesService } from "../app/observablesToturial/observableServices";
+import { SubjectsService } from "../app/subjectsToturial/subjectsServices";
 import {
   AppComponent,
   ChildComponent,
@@ -22,7 +29,14 @@ import {
   ErrorPage,
   RoutesActivator,
   AjaxChildComponent,
-  AuthService
+  AuthService,
+  CreateSession,
+  Sessions,
+  // ReadComponent,
+  // CreateComponent,
+  ObservableComponent,
+  Ajax,
+  SubjectsComponent
 } from "./index";
 
 @NgModule({
@@ -30,7 +44,11 @@ import {
     BrowserModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    ReactiveFormsModule,
+    StoreModule.forRoot({ items: reducer }),
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -43,7 +61,14 @@ import {
     ChildDetail,
     CreateChild,
     ErrorPage,
-    AjaxChildComponent
+    AjaxChildComponent,
+    CreateSession,
+    Sessions,
+    // ReadComponent,
+    // CreateComponent,
+    Ajax,
+    ObservableComponent,
+    SubjectsComponent
   ],
   providers: [
     GeneralService,
@@ -52,6 +77,10 @@ import {
     AjaxGeneralService,
     AjaxChildsResolver,
     AuthService,
+    AjaxService,
+    ObservablesService,
+    SubjectsService,
+
     {
       provide: "canDeactivateCreateChild",
       useValue: checkDirtyState

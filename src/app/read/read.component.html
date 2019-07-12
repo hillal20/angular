@@ -1,0 +1,11 @@
+<div>
+  <h4>Read Component</h4>
+  <ul>
+    <li
+      (click)="deleteItems(i)"
+      *ngFor="let item of items | async; let i = index"
+    >
+      <a [href]="item.url">{{ item.name }}</a>
+    </li>
+  </ul>
+</div>

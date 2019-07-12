@@ -1,0 +1,9 @@
+<div>
+  <div *ngFor="let el of data">
+    Ajax here
+    {{ el.text }}
+  </div>
+
+  <div *ngFor="let b of data2">{{ b.text }}</div>
+  <div *ngIf="errorMsg">{{ errorMsg.message }}</div>
+</div>

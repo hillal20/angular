@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { GeneralService } from "src/app/shared/services";
 import { ToastrService } from "ngx-toastr";
-import { IChild } from "src/app/shared/models/childsModel";
-
+import { IChild, ISession } from "src/app/shared/models/childsModel";
+import { Router } from "@angular/router";
 @Component({
   // selector: "child",
   templateUrl: "./child.html",
@@ -13,7 +13,8 @@ export class ChildComponent implements OnInit {
 
   constructor(
     private generalService: GeneralService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) {}
 
   ngOnInit() {

@@ -1,0 +1,13 @@
+<div>
+  <h2>Create works</h2>
+  <div>
+    name:
+    <input #name type="text" />
+  </div>
+  <div>
+    url:
+    <input #url type="text" />
+  </div>
+  <button (click)="addItemToList(name.value, url.value)">SUBMIT</button>
+  <app-read></app-read>
+</div>

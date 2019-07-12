@@ -13,4 +13,13 @@
   <div>{{ child?.review }}</div>
   <div>{{ child?.hobby }}</div>
   <div>{{ child?.height }}</div>
+  <a
+    [ngStyle]="{ color: 'red', cursor: 'pointer' }"
+    (click)="addSession(child?.id)"
+    >Add session
+  </a>
+  <create-session
+    *ngIf="addSessionSwitch"
+    (saveNewSession)="catchingSaveNewSession($event)"
+  ></create-session>
 </div>

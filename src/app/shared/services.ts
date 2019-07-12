@@ -11,6 +11,12 @@ export class GeneralService {
       return c.id === id;
     });
   }
+  saveChild(newChild) {
+    newChild.id = 999;
+    newChild.sessions = [];
+    childs.push(newChild);
+    console.log("child ===> ", newChild);
+  }
 }
 const childs: IChild[] = [
   {
@@ -33,11 +39,17 @@ const childs: IChild[] = [
     sessions: [
       {
         id: 1,
-        name: "session1"
+        name: "session1",
+        presenter: "Algeria",
+        abstract: "hello word my first training ",
+        duration: 5
       },
       {
         id: 2,
-        name: "session2"
+        name: "session2",
+        presenter: "senegal",
+        abstract: "hello word my first training ",
+        duration: 5
       }
     ]
   },
@@ -61,11 +73,17 @@ const childs: IChild[] = [
     sessions: [
       {
         id: 1,
-        name: "session1"
+        name: "session1",
+        presenter: "hilal",
+        abstract: "hello word my first training ",
+        duration: 5
       },
       {
         id: 2,
-        name: "session2"
+        name: "session2",
+        presenter: "hilal",
+        abstract: "hello word my first training ",
+        duration: 5
       }
     ]
   },
@@ -89,11 +107,17 @@ const childs: IChild[] = [
     sessions: [
       {
         id: 1,
-        name: "session1"
+        name: "session1",
+        presenter: "hilal",
+        abstract: "hello word my first training ",
+        duration: 5
       },
       {
         id: 2,
-        name: "session2"
+        name: "session2",
+        presenter: "david",
+        abstract: "i love soccer like crazy ",
+        duration: 3
       }
     ]
   }

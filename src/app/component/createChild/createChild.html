@@ -1,5 +1,60 @@
 <div class="createChild">
   <h3>Create Child</h3>
-  <button (click)="submit()">Submit</button>
-  <button (click)="cancel()">Cancel</button>
+  <form #createChildForm="ngForm" (ngSubmit)="submit(createChildForm.value)">
+    <div>
+      Name:
+      <input (ngModel)="(name)" name="name" placeholder="" required />
+    </div>
+    <div>
+      Last Name:
+      <input (ngModel)="(lastName)" name="lastName" placeholder="" required />
+    </div>
+    <div>
+      Age:
+      <input (ngModel)="(age)" name="age" placeholder="" required />
+    </div>
+    <div>
+      Time:
+      <input (ngModel)="(time)" name="time" placeholder="" required />
+    </div>
+    <div>
+      Date
+      <input (ngModel)="(date)" name="date" placeholder="" required />
+    </div>
+    <div>
+      Elements:
+
+      <input (ngModel)="(elements)" name="elements" placeholder="" required />
+    </div>
+    <div>
+      Item:
+      <input (ngModel)="(item)" name="name" placeholder="" required />
+    </div>
+    <div>
+      Review:
+      <input (ngModel)="(Review)" name="review" placeholder="" required />
+    </div>
+    <div>
+      Height:
+      <input (ngModel)="(height)" name="height" placeholder="" required />
+    </div>
+    <div ngModelGroup="location">
+      <div>
+        address:
+        <input (ngModel)="(address)" name="address" placeholder="" required />
+      </div>
+      <div>
+        city:
+        <input (ngModel)="(city)" name="city" placeholder="" required />
+      </div>
+      <div>
+        Country:
+        <input (ngModel)="(country)" name="country" placeholder="" required />
+      </div>
+    </div>
+    <div>
+      <button type="submit">Submit</button>
+      <button type="button" [disabled]="createChildForm.invalid">Cancel</button>
+    </div>
+  </form>
 </div>

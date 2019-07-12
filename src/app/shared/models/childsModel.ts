@@ -8,7 +8,7 @@ export interface IChild {
   elements: number[];
   item: string;
   review: string;
-  hobby: string;
+  hobby?: string;
   height: string;
   location?: {
     address: string;
@@ -20,6 +20,9 @@ export interface IChild {
 }
 
 export interface ISession {
-  id: number;
-  name: string;
+  id?: number;
+  name?: string;
+  presenter?: string;
+  duration?: number;
+  abstract?: string;
 }
