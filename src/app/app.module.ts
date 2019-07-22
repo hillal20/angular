@@ -8,6 +8,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { AjaxService } from "../app/ajax/ajaxService";
 import { ObservablesService } from "../app/observablesToturial/observableServices";
 import { SubjectsService } from "../app/subjectsToturial/subjectsServices";
+import { OpsService } from "./operators/operatorsService";
 import {
   AppComponent,
   ChildComponent,
@@ -36,7 +37,14 @@ import {
   // CreateComponent,
   ObservableComponent,
   Ajax,
-  SubjectsComponent
+  SubjectsComponent,
+  BehavioralSubjectComponent,
+  BehavioralSubjectsService,
+  ReplaySubjectComponent,
+  ReplaySubjectsService,
+  OperatorComponent,
+  Child22,
+  Parent2
 } from "./index";
 
 @NgModule({
@@ -68,7 +76,12 @@ import {
     // CreateComponent,
     Ajax,
     ObservableComponent,
-    SubjectsComponent
+    SubjectsComponent,
+    BehavioralSubjectComponent,
+    ReplaySubjectComponent,
+    OperatorComponent,
+    Child22,
+    Parent2
   ],
   providers: [
     GeneralService,
@@ -80,6 +93,10 @@ import {
     AjaxService,
     ObservablesService,
     SubjectsService,
+    BehavioralSubjectComponent,
+    BehavioralSubjectsService,
+    ReplaySubjectsService,
+    OpsService,
 
     {
       provide: "canDeactivateCreateChild",

@@ -11,9 +11,9 @@ export class SubjectsComponent implements OnInit {
   ngOnInit() {
     const subject = this.subjectServices.createSubject();
 
-    subject.subscribe(
+    const observer1 = subject.subscribe(
       data => {
-        this.createHTMLElements(" observer1 ===> " + data);
+        this.createHTMLElements("observer1 ===> " + data);
       },
       err => {
         this.createHTMLElements(err);
@@ -22,7 +22,15 @@ export class SubjectsComponent implements OnInit {
         this.createHTMLElements("==completed===");
       }
     );
-    subject.next("subject is sending....");
+    subject.next("first message ....");
+
+    const observer2 = subject.subscribe(data => {
+      this.createHTMLElements(" Observer2 ==> " + data);
+    });
+    subject.next("second message ....");
+    subject.next(" third  message ....");
+    observer2.unsubscribe();
+    subject.next(" final   message ....");
   }
   createHTMLElements(x: any) {
     let node = document.createElement("li");

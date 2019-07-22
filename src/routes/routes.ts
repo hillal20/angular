@@ -12,11 +12,21 @@ import { CreateComponent } from "../app/create/create.component";
 import { ReadComponent } from "../app/read/read.component";
 import { ObservableComponent } from "../app/observablesToturial/observables";
 import { SubjectsComponent } from "../app/subjectsToturial/subjectsToturial";
+import { BehavioralSubjectComponent } from "../app/subjectsToturial/behavioralSubject/behavioralSubject";
+import { ReplaySubjectComponent } from "../app/subjectsToturial/replaySubject/relpaySubject";
 import { Ajax } from "../app/ajax/ajax";
+import { OperatorComponent } from "../app/operators/operators";
+import { Child22 } from "../app/refDetection/child/child";
+import { Parent2 } from "../app/refDetection/parent/parent";
 export const appRoutes: Routes = [
   { path: "childs", component: ChildComponent },
   { path: "observable", component: ObservableComponent },
   { path: "subject", component: SubjectsComponent },
+  { path: "behavioral", component: BehavioralSubjectComponent },
+  { path: "replay", component: ReplaySubjectComponent },
+  { path: "operator", component: OperatorComponent },
+
+  { path: "Parent2", component: Parent2 },
   // { path: "read", component: ReadComponent },
   // // { path: "create", component: CreateComponent },
   { path: "ajax", component: Ajax },

@@ -1,6 +1,6 @@
 import { Injectable, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
-import "rxjs/add/operator/share";
+import "rxjs/operators/share";
 // you have to include:  npm install --save rxjs-compat
 @Injectable()
 export class ObservablesService implements OnInit {
