@@ -46,6 +46,7 @@ import {
   Child22,
   Parent2
 } from "./index";
+import { TableauComponent } from "./tableau/tableau";
 
 @NgModule({
   imports: [
@@ -81,7 +82,8 @@ import {
     ReplaySubjectComponent,
     OperatorComponent,
     Child22,
-    Parent2
+    Parent2,
+    TableauComponent
   ],
   providers: [
     GeneralService,

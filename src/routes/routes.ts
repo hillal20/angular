@@ -18,7 +18,9 @@ import { Ajax } from "../app/ajax/ajax";
 import { OperatorComponent } from "../app/operators/operators";
 import { Child22 } from "../app/refDetection/child/child";
 import { Parent2 } from "../app/refDetection/parent/parent";
+import { TableauComponent } from "../app/tableau/tableau";
 export const appRoutes: Routes = [
+  { path: "tableau", component: TableauComponent },
   { path: "childs", component: ChildComponent },
   { path: "observable", component: ObservableComponent },
   { path: "subject", component: SubjectsComponent },
